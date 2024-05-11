@@ -1,8 +1,8 @@
-drop database if exists bd_alquilercarros;
+drop database if exists bd_alquilerdecarros;
 
-create database bd_alquilercarros;
+create database bd_alquilerdecarros;
 
-use bd_alquilercarros;
+use bd_alquilerdecarros;
 
 create table usuario(
 idadmin int NOT NULL auto_increment,
@@ -11,7 +11,8 @@ email varchar(200) not null,
 contrasena varchar (200) not null,
 nombres varchar(100) not NULL,
 apellidos varchar(100) not NULL,
-primary key (idadmin)
+primary key (idadmin),
+activo BOOL NULL
 );
 
 create table cliente(
@@ -24,6 +25,20 @@ direccion varchar (200) not null,
 DNI VARCHAR (8) not null,
 Brevete VARCHAR (9) not null,
 primary key (idcliente)
+);
+
+create table rol(
+	idrol int auto_increment not null,
+    nomrol varchar(300) null,
+    primary key(idrol)
+);
+
+create table usuario_rol(
+	idadmin int not null,
+    idrol int not null,
+    primary key(idadmin,idrol),
+    FOREIGN KEY(idadmin) REFERENCES usuario(idadmin),
+	FOREIGN KEY(idrol) REFERENCES rol(idrol)
 );
 
 create table carro (
@@ -110,7 +125,7 @@ insert into carro VALUES
 ('983WX3','Arizzo 5 GX','Cherry','Azul','China-V standard Acteco SQRE4T15B 1.5T',5,'10/01/2017',50,'GLP',500,'Disponible'),
 ('787WQX','Elantra Touring','Hyundai','Gris','triple',5,'10/10/2005',5000,'GLV',50,'No Disponible');
 insert into contrato VALUES 
-(1,'11','7W599E','01/05/2024','10/05/2024','Federico','Lopez','98938498','Av Manco Capac 251','Honda Civic'),
+(1,'11','7W599Eusuariousuario','01/05/2024','10/05/2024','Federico','Lopez','98938498','Av Manco Capac 251','Honda Civic'),
 (2,'12','9543DP','30/04/2024','20/05/2024','Juan','Rodrigues','89838989','Av Los Olivos 165','Arizzo 5 GT'),
 (3,'15','787WQX','31/04/2024','10/05/2024','Rodrigo','Martinez','38884968','Av Peru 51','Elantra Touring');
 insert into comentarios VALUES
