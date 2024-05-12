@@ -36,7 +36,7 @@ public class SecurityConfig {
                         login->
                                 login.loginPage("/auth/login")
                                         .defaultSuccessUrl("/auth/login-success")
-                                        .usernameParameter("email")
+                                        .usernameParameter("nomadmin")
                                         .passwordParameter("contrasena")
                 ).logout(
                         logout->

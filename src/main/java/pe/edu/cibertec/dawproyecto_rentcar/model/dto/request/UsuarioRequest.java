@@ -1,6 +1,5 @@
 package pe.edu.cibertec.dawproyecto_rentcar.model.dto.request;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 
 @Data

@@ -1,4 +1,4 @@
-package com.example.DAWProyecto_RentCar.repository;
+package pe.edu.cibertec.dawproyecto_rentcar.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
