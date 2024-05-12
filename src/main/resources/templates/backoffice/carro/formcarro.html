@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+    <div class="card-header text-bg-danger">
+        Mantenimiento de carros:
+    </div>
+    <div class="card-body">
+        <button id="btnagregar" type="button" class="btn btn-primary">Agregar</button>
+        <hr />
+        <div id="divmensaje"></div>
+        <table id="tblcarro" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Modelo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Kilometraje</th>
+                <th scope="col">Matricula</th>
+                <th scope="col">Asientos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="carro : ${listaCarro}">
+                <td th:text="${carro.modelo}"></td>
+                <td th:text="${carro.marca}"></td>
+                <td th:text="${carro.kilometraje}"></td>
+                <td th:text="${carro.matricula}"></td>
+                <td th:text="${carro.asiento}"></td>
+
+                <td>
+                    <button type="button" class="btn btn-primary btnactualizar"
+                            th:data-usuid="${carro.idcarro}"
+                    >Actualizar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
