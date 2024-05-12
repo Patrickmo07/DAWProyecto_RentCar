@@ -1,4 +1,4 @@
-package pe.edu.cibertec.dawproyecto_rentcar.backoffice;
+package pe.edu.cibertec.dawproyecto_rentcar.controller.backoffice;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;

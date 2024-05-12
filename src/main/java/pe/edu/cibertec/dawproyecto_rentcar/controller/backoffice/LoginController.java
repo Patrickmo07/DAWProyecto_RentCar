@@ -1,4 +1,4 @@
-package pe.edu.cibertec.dawproyecto_rentcar.backoffice;
+package pe.edu.cibertec.dawproyecto_rentcar.controller.backoffice;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
