@@ -42,7 +42,8 @@ create table usuario_rol(
 );
 
 create table carro (
-idcarro varchar (6) not null,
+idcarro int not null,
+Matricula VARCHAR (6) not null,
 Modelo varchar (100) not null,
 Marca varchar (100) not null,
 Color varchar (50) not null,
@@ -119,23 +120,23 @@ insert into cliente(nomcliente,apellcliente,email,telefono,direccion,DNI,brevete
 ('Martin','Sanchez','SanchoElGrande@gmail.com','776667889','Av Argentina 121','65638992','87863521f'),
 ('Jimmy','McCarran','ForlornHope@outlook.com','987678205','Av Venezuela 213','76542878','56382991k');
 insert into carro VALUES 
-('982WX3','Honda Civic','Honda','Blanco','2.0-liter non-turbo four-cylinder',5,'10/10/2010',50,'GLV',150,'Disponible'),
-('7W599E','Honda Civic','Honda','Negro','2.0-liter non-turbo four-cylinder',5,'10/10/2010',100,'GLV',100,'No Disponible'),
-('9543DP','Arizzo 5 GT','Cherry','Rojo','China-V standard Acteco SQRE4T15B 1.5T ',5,'11/05/2016',110,'GLP',250,'No Disponible'),
-('983WX3','Arizzo 5 GX','Cherry','Azul','China-V standard Acteco SQRE4T15B 1.5T',5,'10/01/2017',50,'GLP',500,'Disponible'),
-('787WQX','Elantra Touring','Hyundai','Gris','triple',5,'10/10/2005',5000,'GLV',50,'No Disponible');
+(001,'982WX3','Honda Civic','Honda','Blanco','2.0-liter non-turbo four-cylinder',5,'10/10/2010',50,'GLV',150,'Disponible'),
+(002,'7W599E','Honda Civic','Honda','Negro','2.0-liter non-turbo four-cylinder',5,'10/10/2010',100,'GLV',100,'No Disponible'),
+(003,'9543DP','Arizzo 5 GT','Cherry','Rojo','China-V standard Acteco SQRE4T15B 1.5T ',5,'11/05/2016',110,'GLP',250,'No Disponible'),
+(004,'983WX3','Arizzo 5 GX','Cherry','Azul','China-V standard Acteco SQRE4T15B 1.5T',5,'10/01/2017',50,'GLP',500,'Disponible'),
+(005,'787WQX','Elantra Touring','Hyundai','Gris','triple',5,'10/10/2005',5000,'GLV',50,'No Disponible');
 insert into contrato VALUES 
-(1,'11','7W599Eusuariousuario','01/05/2024','10/05/2024','Federico','Lopez','98938498','Av Manco Capac 251','Honda Civic'),
-(2,'12','9543DP','30/04/2024','20/05/2024','Juan','Rodrigues','89838989','Av Los Olivos 165','Arizzo 5 GT'),
-(3,'15','787WQX','31/04/2024','10/05/2024','Rodrigo','Martinez','38884968','Av Peru 51','Elantra Touring');
+(1,'11',002,'01/05/2024','10/05/2024','Federico','Lopez','98938498','Av Manco Capac 251','Honda Civic'),
+(2,'12',003,'30/04/2024','20/05/2024','Juan','Rodrigues','89838989','Av Los Olivos 165','Arizzo 5 GT'),
+(3,'15',005,'31/04/2024','10/05/2024','Rodrigo','Martinez','38884968','Av Peru 51','Elantra Touring');
 insert into comentarios VALUES
-(101,13,4,'El auto se encontraba en excelente estado de acuerdo  a las especificaciones,sin embargo el proceso de alquiler y la solucion de problemas llegaban a tardar','03/05/2024','Martin','Sanchez'),
-(102,13,5,'Excelente servicio, lo volver�a a usar','03/05/2024','Jimmy','McCarran'),
-(103,14,3,'Muy atentos y confiables','05/05/2024','Rodrigo','Martinez');
+(1,4,8,'El auto se encontraba en excelente estado de acuerdo  a las especificaciones,sin embargo el proceso de alquiler y la solucion de problemas llegaban a tardar','03/05/2024','Martin','Sanchez'),
+(2,5,10,'Excelente servicio, lo volver�a a usar','03/05/2024','Jimmy','McCarran'),
+(3,3,9,'Muy atentos y confiables','05/05/2024','Rodrigo','Martinez');
 insert into devolucion (fecdevolucion,estadodevolucion,fk_idcliente,nomcliente,apellcliente,fk_idcarro,Modelo,Marca) VALUES 
-('03/05/2024','Buen Estado',14,'Martin','Sanchez','982WX3','Honda Civic','Honda'),
-('30/04/2024','Buen Estado',15,'Jimmy','McCarran','983WX3','Arizzo 5 GX','Cherry');
+('03/05/2024','Buen Estado',14,'Martin','Sanchez',001,'Honda Civic','Honda'),
+('30/04/2024','Buen Estado',15,'Jimmy','McCarran',004,'Arizzo 5 GX','Cherry');
 insert into boleta (FECBOLETA,MontoTotal,fk_idcliente,nomcliente,apecliente,dni,fk_idcarro,modelo,precioxdia) VALUES
-('01/05/2024',1000,11,'Federico','Lopez','98938898','7W599E','Honda Civic',100),
-('30/04/2024',5250,12,'Juan','Rodrigues','89834989','9543DP','Arizzo 5 GT',250),
-('31/04/2024',550,13,'Rodrigo','Martinez','38884968','787WQX','Elantra Touring',50);
+('01/05/2024',1000,11,'Federico','Lopez','98938898',002,'Honda Civic',100),
+('30/04/2024',5250,12,'Juan','Rodrigues','89834989',003,'Arizzo 5 GT',250),
+('31/04/2024',550,13,'Rodrigo','Martinez','38884968',005,'Elantra Touring',50);

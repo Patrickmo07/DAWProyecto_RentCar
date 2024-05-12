@@ -8,7 +8,10 @@ import lombok.Data;
 @Table (name="carro")
 public class Carro {
     @Id
-    private String idcarro;
+    @Column (name="idcarro")
+    private int idcarro;
+    @Column (name="Matricula")
+    private String Matricula;
     @Column (name="Modelo")
     private String Modelo;
     @Column (name="Marca")
